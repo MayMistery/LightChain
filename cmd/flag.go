@@ -11,6 +11,12 @@ func Flag(cfg *Config) {
 	flag.StringVar(&cfg.Dir, "d", ".", "directory to serve")
 	flag.StringVar(&cfg.Host, "h", "0.0.0.0", "listen host")
 	flag.StringVar(&cfg.hostNet, "n", "", "listen network interface")
+	flag.StringVar(&cfg.Chain, "C", "", "socks5 chain")
+	flag.BoolVar(&cfg.Server, "srv", false, "server")
+	flag.BoolVar(&cfg.Client, "cli", false, "client")
+	flag.BoolVar(&cfg.Local, "local", false, "use vps public IP by ssh -R")
+	flag.BoolVar(&cfg.Dep, "dep", false, "clients generate deployment sh")
+	flag.BoolVar(&cfg.Alive, "ping", false, "alive scan")
 
 	flag.Parse()
 
