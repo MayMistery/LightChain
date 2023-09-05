@@ -11,6 +11,7 @@ func main() {
 
 	cmd.Flag(&cfg)
 
+	//http://rootkiter.com/EarthWorm/
 	if cfg.Server {
 		server.ExecServer(cfg)
 	} else if cfg.Client {
