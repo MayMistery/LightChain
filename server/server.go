@@ -10,9 +10,10 @@ func ExecServer(cfg cmd.Config) {
 	if cfg.Local {
 		vpsPublicIP()
 	}
-	fileServer(cfg)
+	FileServer(cfg)
 
 	Addr := getAddr(cfg)
+
 	utils.SockServer(Addr)
 
 	utils.GenDeployment(cfg)
